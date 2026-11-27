@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Аружан Ермекбаева</title>
+<meta name="description" content="Аружан Ермекбаева — Software Engineer (AITU, 2026): AI-проекты, опыт и планы.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE  everyday-personal: a junior engineer's calling card, confident and plain
+   IDEA   a match card from her own diploma: her stack vs the vacancy stack, scored like SynektaKZ
+   PICTURE a two-circle overlap: what I know, what matches, what I want to learn
+   COLOUR white + black, one mint field; night: black with mint ink
+   TYPE   Space Grotesk 700 + Inter
+   LAYOUT laptop: mint field (name, intro, links) | white overlap picture; phone: name, picture, links */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0a0a0a);--ink:light-dark(#0a0a0a,#f1f1f1);--muted:light-dark(#4b4b4b,#a9a9a9);--line:light-dark(#e3e3e3,#262626);--chip:light-dark(#f2f2f2,#161616);--field:light-dark(#b8f5d0,#0e1912);--fink:light-dark(#0a0a0a,#b8f5d0);--mint:light-dark(#0a0a0a,#b8f5d0);--mintbg:#b8f5d0}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3{font-family:"Space Grotesk",Inter,system-ui,sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.05;text-wrap:balance;margin:0}
+h2{font-size:clamp(30px,4vw,44px);margin-bottom:24px}
+h3{font-size:22px;line-height:1.2}
+p{margin:0 0 14px;max-width:66ch}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(36px,5vw,72px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+.band+.band{border-top:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:12px max(5vw,16px)}
+nav .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px}
+nav b{font-family:"Space Grotesk",sans-serif;font-size:18px;margin-right:auto}
+nav a{text-decoration:none;font-size:15px;color:var(--muted);padding:6px 0}
+nav a:hover,nav a:focus-visible{color:var(--ink)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+.field{background:var(--field);color:var(--fink);padding:clamp(36px,5vw,72px) clamp(20px,4vw,56px) clamp(36px,5vw,64px) max(5vw,16px);display:flex;flex-direction:column;justify-content:center}
+.field h1{font-size:clamp(44px,6vw,76px);margin-bottom:18px}
+.role{font-family:"Space Grotesk",sans-serif;font-size:20px;font-weight:500;margin-bottom:18px}
+.field p{font-size:17px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid currentColor;text-decoration:none;font-weight:600;font-size:15px}
+.btn.solid{background:var(--fink);color:var(--field);border-color:var(--fink)}
+.btn:focus-visible,nav a:focus-visible,.card a:focus-visible{outline:3px solid #2e7d57;outline-offset:3px}
+.pic{padding:clamp(28px,4vw,56px) max(5vw,16px) clamp(28px,4vw,56px) clamp(20px,3vw,48px);display:flex;flex-direction:column;justify-content:center}
+.pic h2{font-size:22px;margin-bottom:6px}
+.pic .note{color:var(--muted);font-size:14px;margin-bottom:18px}
+.venn{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr) minmax(0,1fr);aspect-ratio:1.62/1;width:100%}
+.venn::before,.venn::after{content:"";position:absolute;top:50%;transform:translateY(-50%);width:61.7%;aspect-ratio:1;border-radius:50%;pointer-events:none}
+.venn::before{left:0;background:color-mix(in srgb,var(--ink) 5%,transparent);border:1.5px solid var(--ink)}
+.venn::after{right:0;background:color-mix(in srgb,var(--mintbg) 45%,transparent);border:1.5px dashed var(--ink)}
+.zone{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:8% 4%}
+.zone.l{padding-left:12%}
+.zone.r{padding-right:12%}
+.zone h3{font-size:15px;font-family:Inter,sans-serif;font-weight:600;text-align:center;margin-bottom:4px;line-height:1.25}
+.tag{font-size:13px;line-height:1.2;padding:4px 9px;border-radius:999px;background:var(--bg);border:1px solid var(--line);white-space:nowrap}
+.zone.m .tag{background:var(--mintbg);color:#0a0a0a;border-color:#0a0a0a;font-weight:600}
+.legend{display:none}
+@media(max-width:899px){.hero{grid-template-columns:minmax(0,1fr)}.pic{padding-left:max(5vw,16px)}}
+@media(max-width:560px){.venn{grid-template-columns:minmax(0,1fr);aspect-ratio:auto;gap:12px}.venn::before,.venn::after{display:none}.zone,.zone.l,.zone.r{align-items:flex-start;flex-direction:row;flex-wrap:wrap;padding:14px;border:1.5px solid var(--ink);border-radius:16px}.zone.r{border-style:dashed}.zone.m{background:color-mix(in srgb,var(--mintbg) 35%,transparent)}.zone h3{width:100%;text-align:left}}
+.about{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:start}
+.facts{display:grid;gap:0;border-top:1px solid var(--ink)}
+.facts div{display:grid;grid-template-columns:9em minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.facts dt{color:var(--muted);font-size:14px}
+.facts dd{margin:0;font-weight:500}
+.feature{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);background:var(--chip);border-radius:24px;padding:clamp(22px,3.5vw,44px);margin-bottom:20px}
+.kicker{font-size:14px;color:var(--muted);margin-bottom:8px}
+.feature h3{font-size:clamp(26px,3vw,34px);margin-bottom:12px}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 16px}
+.stack span{font-size:13px;padding:3px 9px;border-radius:6px;border:1px solid var(--line);background:var(--bg)}
+ul.pts{margin:0 0 16px;padding-left:20px}
+ul.pts li{margin-bottom:6px}
+.formula{font-family:"Space Grotesk",sans-serif;font-size:clamp(19px,2.2vw,24px);font-weight:500;padding:14px 16px;border-radius:12px;background:var(--bg);border:1px solid var(--line);margin-bottom:18px;overflow-wrap:anywhere}
+.chart h4{font-size:15px;margin:0 0 12px;font-weight:600}
+.scale{position:relative;margin:0 0 6px}
+.row{display:grid;grid-template-columns:8.5em minmax(0,1fr);align-items:center;gap:10px;margin-bottom:12px}
+.row span{font-size:14px;color:var(--muted);line-height:1.3}
+.row strong{color:var(--ink);font-weight:600;white-space:nowrap}
+.track{position:relative;height:30px;border-radius:6px;background:var(--bg);border:1px solid var(--line)}
+.rng{position:absolute;top:4px;bottom:4px;border-radius:4px}
+.rng.good{background:var(--mintbg);border:1.5px solid #0a0a0a}
+.rng.bad{background:color-mix(in srgb,var(--ink) 22%,transparent)}
+.rng b{position:absolute;top:-1px;font-size:13px;font-weight:600;white-space:nowrap;line-height:28px}
+.rng.good b{right:calc(100% + 6px)}
+.rng.bad b{left:calc(100% + 6px)}
+.thr{position:absolute;top:-6px;bottom:-6px;width:0;border-left:2px dashed var(--ink)}
+.axis{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:10px;font-size:13px;color:var(--muted)}
+.axis div{display:flex;justify-content:space-between;position:relative}
+.axis i{font-style:normal}
+.axis i:nth-child(2){position:absolute;left:60%;transform:translateX(-50%);white-space:nowrap}
+.chart .cap{font-size:14px;color:var(--muted);margin-top:14px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{border:1.5px solid var(--ink);border-radius:20px;padding:clamp(20px,3vw,32px);display:flex;flex-direction:column}
+.card p{color:var(--muted)}
+.card .lnk{margin-top:auto;font-weight:600;text-underline-offset:4px;padding:10px 0 0;display:inline-block}
+.exp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.job{border-top:3px solid var(--ink);padding-top:18px}
+.when{font-size:14px;color:var(--muted);margin:6px 0 12px}
+.learn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px)}
+.goal{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.goal b{font-family:"Space Grotesk",sans-serif;font-size:19px}
+.goal span{color:var(--muted)}
+.end{background:var(--field);color:var(--fink);border-top:0!important}
+.end .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:end}
+.end h2{margin-bottom:12px}
+.end .btns{justify-content:flex-end}
+footer{padding:20px max(5vw,16px);font-size:14px;color:var(--muted);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+@media(max-width:899px){.about,.feature,.learn,.end .wrap{grid-template-columns:minmax(0,1fr)}.end .btns{justify-content:flex-start}}
+@media(max-width:700px){.cards,.exp{grid-template-columns:minmax(0,1fr)}nav a{font-size:14px}}
+@media(max-width:600px){.row,.axis{grid-template-columns:minmax(0,1fr)}.axis>span{display:none}.facts div{grid-template-columns:minmax(0,1fr);gap:2px}.goal{grid-template-columns:minmax(0,1fr);gap:2px}}
+@media(prefers-reduced-motion:no-preference){.rng{transform-origin:left;animation:grow .9s ease-out both}.rng.bad{animation-delay:.15s}@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}}
+</style>
+</head>
+<body>
+<nav aria-label="Разделы">
+  <div class="wrap">
+    <b>Аружан Ермекбаева</b>
+    <a href="#about">Обо мне</a>
+    <a href="#projects">Проекты</a>
+    <a href="#experience">Опыт</a>
+    <a href="#learn">Чему учусь</a>
+    <a href="#contact">Контакты</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="field">
+    <h1>Аружан Ермекбаева</h1>
+    <div class="role">Software Engineer · Астана</div>
+    <p>Окончила Astana IT University по программе «Программная инженерия» в 2026 году. Делаю веб-приложения с ИИ: векторный поиск, интеграции LLM, автоматизацию рутины. Работала бэкенд-стажёром и бизнес-аналитиком на проекте с ИИ для госоргана.</p>
+    <p>Хочу расти в AI Product Engineer и выпускать функции, которыми пользуются реальные люди.</p>
+    <div class="btns">
+      <a class="btn solid" href="https://github.com/AruzhanYermekbayeva">GitHub</a>
+      <a class="btn" href="#projects">Смотреть проекты</a>
+    </div>
+  </div>
+  <div class="pic">
+    <h2>Мой стек и ваш</h2>
+    <p class="note">Пересечение того, с чем я уже работала, и стека вакансии.</p>
+    <div class="venn" id="venn" role="img" aria-label="Диаграмма: мои технологии, совпадения со стеком вакансии и то, что хочу освоить"></div>
+  </div>
+</header>
+
+<section class="band" id="about">
+  <div class="wrap about">
+    <div>
+      <h2>Обо мне</h2>
+      <p>Мне больше всего нравится момент, когда идея превращается в работающий продукт. Поэтому для диплома я выбрала не учебный CRUD, а платформу, где стартапы находят друг друга для коллабораций, с векторным поиском и LLM, которая реально задеплоена.</p>
+      <p>Мне интересно и писать код, и разбираться в задаче. На практике в КазНУС я написала бэкенд, который заменил ручной расчёт нагрузки. В Sirek, наоборот, была аналитиком: превращала юридические критерии проверки конкуренции в алгоритмы и писала техзадание для системы с ИИ. Такой опыт помогает понимать, зачем нужна функция, ещё до того, как её писать.</p>
+      <p>Эту страницу я собрала с помощью Claude: это тот же AI-подход к разработке, которому хочу учиться дальше.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Образование</dt><dd>Бакалавр, программная инженерия, Astana IT University, 2023–2026</dd></div>
+      <div><dt>Город</dt><dd>Астана</dd></div>
+      <div><dt>Языки кода</dt><dd>TypeScript, JavaScript, Python, HTML, CSS</dd></div>
+      <div><dt>ИИ</dt><dd>Hugging Face Embeddings, Groq/LLaMA, pgvector, OpenCV, Selenium</dd></div>
+      <div><dt>Ещё</dt><dd>Git, AWS (базовый), Cisco Networking, Unity</dd></div>
+      <div><dt>Языки</dt><dd>Казахский (родной), русский (свободно), английский (C1)</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="band" id="projects">
+  <div class="wrap">
+    <h2>Проекты</h2>
+
+    <article class="feature">
+      <div>
+        <div class="kicker">Дипломный проект · 2026</div>
+        <h3>SynektaKZ</h3>
+        <p>Платформа, где стартапы Казахстана находят друг друга для коллабораций. Каждый проект описывает, что ему нужно и что он может предложить, а система подбирает партнёров, у которых эти запросы и предложения сходятся. Сравнение идёт по смыслу, а не по ключевым словам.</p>
+        <ul class="pts">
+          <li>Запросы и предложения проекта превращаются в 384-мерный вектор мультиязычной моделью MiniLM (Hugging Face), поиск идёт по HNSW-индексу в pgvector.</li>
+          <li>LLM (LLaMA 3.1 через Groq) объясняет, чем два проекта полезны друг другу и где точки взаимодействия.</li>
+          <li>Запросы на коллаборацию с уведомлениями в реальном времени через Supabase Realtime.</li>
+          <li>Контакты открываются только после взаимного согласия: это реализовано SQL-функциями SECURITY DEFINER и политиками RLS.</li>
+        </ul>
+        <div class="stack"><span>React</span><span>TypeScript</span><span>Tailwind</span><span>shadcn/ui</span><span>Supabase</span><span>Edge Functions</span><span>pgvector</span><span>Groq</span><span>Vercel</span></div>
+        <a class="btn" href="https://github.com/AruzhanYermekbayeva/SynektaKZ_Diploma">Код на GitHub</a>
+      </div>
+      <div class="chart">
+        <div class="formula">score = 0,7 × cos + 0,3 × Jaccard</div>
+        <h4>Проверка на тестовых парах проектов</h4>
+        <div class="row"><span>Совместимые пары<br><strong>0,646–0,813</strong></span><div class="track"><div class="thr" style="left:60%"></div><div class="rng good" style="left:64.6%;width:16.7%"></div></div></div>
+        <div class="row"><span>Несовместимые<br><strong>0,119–0,142</strong></span><div class="track"><div class="thr" style="left:60%"></div><div class="rng bad" style="left:11.9%;width:2.3%"></div></div></div>
+        <div class="axis"><span></span><div><i>0</i><i>0,6 — порог</i><i>1</i></div></div>
+        <p class="cap">Сильным совпадением считается score от 0,6. Совместимые и несовместимые пары разделяются в 5,4 раза.</p>
+      </div>
+    </article>
+
+    <div class="cards">
+      <article class="card">
+        <div class="kicker">Проект · MVP</div>
+        <h3>UniTutor</h3>
+        <p>MVP для поиска репетиторов среди студентов своего университета: профили, рейтинг, запись на занятие по дате и времени, связь с репетитором напрямую через Telegram.</p>
+        <div class="stack"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Telegram</span></div>
+        <a class="lnk" href="https://github.com/AruzhanYermekbayeva/UniTutor">Код на GitHub →</a>
+      </article>
+      <article class="card">
+        <div class="kicker">Производственная практика · КазНУС</div>
+        <h3>Academic Workload</h3>
+        <p>Сервис для распределения учебной нагрузки в Казахском национальном университете спорта. Парсит учебный план из Excel, сам раскладывает дисциплины по кафедрам и выгружает готовые листы нагрузки по преподавателям. Расчёт нагрузки, который раньше занимал несколько дней, теперь занимает пару секунд.</p>
+        <div class="stack"><span>Python</span><span>Flask</span><span>SQLAlchemy</span><span>openpyxl</span></div>
+        <a class="lnk" href="https://github.com/AruzhanYermekbayeva/academic-workload-kaznus">Код на GitHub →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="experience">
+  <div class="wrap">
+    <h2>Опыт</h2>
+    <div class="exp">
+      <div class="job">
+        <h3>Бизнес-аналитик, ТОО «Sirek»</h3>
+        <div class="when">Август — октябрь 2026</div>
+        <p>Проект для Агентства по защите и развитию конкуренции РК. Подготовила техническое задание для системы с ИИ, которая ищет антиконкурентные нормы в законах. Спроектировала схему автоматической обработки документов и разграничение ролей и прав доступа. Перевела юридические критерии проверки конкуренции в чёткие алгоритмы для автоматической оценки.</p>
+      </div>
+      <div class="job">
+        <h3>Стажёр backend-разработчик, КазНУС</h3>
+        <div class="when">Март — май 2026</div>
+        <p>Написала REST API на Flask, который сократил расчёт преподавательской нагрузки с нескольких дней до пары секунд. Сделала модуль разбора учебных планов из Excel с привязкой дисциплин к кафедрам по ключевым словам, что убрало ошибки ручного ввода.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="learn">
+  <div class="wrap learn">
+    <div>
+      <h2>Чему хочу научиться</h2>
+      <p>У меня есть база в React, TypeScript, бэкенде, базах данных и интеграции LLM. Дальше хочу научиться тому, чего не бывает в учебных проектах: выпускать функции в продакшен, работать с платежами и фоновыми задачами, принимать продуктовые решения вместе с командой. Отдельно хочу прокачать бэкенд на Python и научиться внедрять ИИ в продукт так, чтобы он решал реальные задачи пользователей.</p>
+    </div>
+    <div>
+      <div class="goal"><b>Next.js</b><span>серверные компоненты, роутинг и деплой на Vercel</span></div>
+      <div class="goal"><b>FastAPI</b><span>современный бэкенд на Python: async, типизация, документация API из коробки</span></div>
+      <div class="goal"><b>Внедрение ИИ</b><span>LLM, RAG и агенты в продакшене: качество ответов, стоимость, мониторинг</span></div>
+      <div class="goal"><b>Stripe</b><span>подписки, вебхуки, безопасная работа с платежами</span></div>
+      <div class="goal"><b>Trigger.dev</b><span>фоновые задачи и очереди</span></div>
+      <div class="goal"><b>Claude Code</b><span>AI-разработка как ежедневный рабочий процесс</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band end" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Давайте работать вместе</h2>
+      <p>Буду рада обсудить задачи и показать, как устроены мои проекты.</p>
+    </div>
+    <div class="btns">
+      <a class="btn solid" href="mailto:aruzhanyermekbayeva945@gmail.com">aruzhanyermekbayeva945@gmail.com</a>
+      <a class="btn" href="https://github.com/AruzhanYermekbayeva">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Аружан Ермекбаева</span><span>Страница сделана вместе с Claude</span></div></footer>
+
+<script>
+{
+  const zones = [
+    {c:'l', t:'Уже умею', tags:['Python · Flask','Supabase · PostgreSQL','MongoDB','Hugging Face','Groq · LLaMA','OpenCV · Selenium']},
+    {c:'m', t:'Совпадает с вашим стеком', tags:['React','TypeScript','Vercel','Git','AI-инструменты']},
+    {c:'r', t:'Хочу освоить', tags:['Next.js','FastAPI','Stripe','Trigger.dev','ИИ в продакшене']}
+  ];
+  const esc = s => s.replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const v = document.getElementById('venn');
+  v.innerHTML = zones.map(z => '<div class="zone ' + z.c + '"><h3>' + esc(z.t) + '</h3>' + z.tags.map(t => '<span class="tag">' + esc(t) + '</span>').join('') + '</div>').join('');
+}
+</script>
+</body>
+</html>
