@@ -949,6 +949,234 @@ a {
   }
 }
 </style>
+
+<style id="visual-polish">
+/* --- Refined visual system: restrained, consistent, responsive --- */
+:root {
+  --bg: #fcfdfc;
+  --surface: #f5f8f6;
+  --surface-hover: #edf3ef;
+  --card: #ffffff;
+  --ink: #17211b;
+  --ink-secondary: #536159;
+  --ink-muted: #78857d;
+  --border: #e5ebe7;
+  --border-strong: #d2ddd6;
+  --accent: #16845f;
+  --accent-bright: #22a477;
+  --accent-soft: #eaf5ef;
+  --accent-ink: #176044;
+  --nav-bg: rgba(252, 253, 252, .9);
+  --shadow-card: 0 2px 8px rgba(24, 45, 33, .035), 0 12px 30px -20px rgba(24, 45, 33, .16);
+  --shadow-lift: 0 16px 36px -20px rgba(24, 45, 33, .2);
+}
+:root[data-theme="dark"] {
+  --bg: #0d120f;
+  --surface: #131b16;
+  --surface-hover: #1a261f;
+  --card: #141c17;
+  --ink: #edf4ef;
+  --ink-secondary: #b1beb5;
+  --ink-muted: #819087;
+  --border: #25332a;
+  --border-strong: #35463b;
+  --accent: #48bd8c;
+  --accent-bright: #55c998;
+  --accent-soft: rgba(72, 189, 140, .13);
+  --accent-ink: #8ce0b8;
+  --nav-bg: rgba(13, 18, 15, .9);
+  --shadow-card: 0 2px 8px rgba(0,0,0,.18), 0 12px 30px -20px rgba(0,0,0,.45);
+  --shadow-lift: 0 16px 36px -20px rgba(0,0,0,.55);
+}
+html { scroll-padding-top: 88px; }
+body {
+  font-size: 15.5px;
+  line-height: 1.68;
+  letter-spacing: -.008em;
+}
+.container { max-width: 1160px; padding-inline: 32px; }
+h1, h2, h3 { letter-spacing: -.035em; }
+.navbar { height: 72px; }
+.logo { font-size: 16px; }
+.nav-menu { gap: 25px; }
+.nav-menu a { font-size: 13.5px; }
+.theme-toggle { border-radius: 50%; width: 38px; height: 38px; }
+.hero {
+  padding-block: 76px 82px;
+  background:
+    radial-gradient(520px circle at 8% 12%, var(--accent-soft), transparent 72%),
+    var(--bg);
+}
+.hero-grid { gap: 56px; align-items: center; }
+.hero h1 { font-size: clamp(40px, 5vw, 60px); line-height: 1.04; letter-spacing: -.055em; }
+.hero-desc { max-width: 590px; font-size: 15.5px; line-height: 1.75; }
+.status-pill { padding: 6px 13px; font-size: 12px; letter-spacing: .01em; }
+.btn { border-radius: 10px; height: 44px; padding-inline: 19px; font-size: 13.5px; }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-ink); border-color: var(--accent-ink); }
+.venn-card {
+  padding: 26px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+}
+.venn-header { align-items: center; margin-bottom: 18px; padding-bottom: 14px; }
+.venn-header h2 { font-size: 17px; }
+.venn-header span { font-size: 11.5px; text-align: right; }
+.venn-stage {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 10px;
+  padding-block: 0;
+}
+.venn-circles { display: none; }
+.venn-col {
+  min-width: 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 14px 10px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--surface);
+}
+.venn-col.center {
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+}
+.venn-col.right { border-style: dashed; }
+.venn-label {
+  width: 100%;
+  min-height: 28px;
+  margin-bottom: 3px;
+  text-align: left;
+  font-size: 9.5px;
+  letter-spacing: .055em;
+}
+.chip {
+  max-width: 100%;
+  white-space: normal;
+  text-align: left;
+  justify-content: flex-start;
+  padding: 5px 8px;
+  border-radius: 7px;
+  font-size: 10.5px;
+  line-height: 1.3;
+  box-shadow: none;
+}
+.venn-col.center .chip { background: var(--accent); }
+.section { padding-block: 68px; }
+.section-header { margin-bottom: 30px; }
+.section-header h2 { font-size: clamp(27px, 3vw, 35px); }
+.about-grid, .learn-grid { gap: 56px; }
+.about-text p { font-size: 15px; line-height: 1.78; margin-bottom: 14px; }
+.about-text p:first-child { font-size: 16px; line-height: 1.72; }
+.facts-card { border-radius: 16px; padding: 6px 22px; }
+.fact-row { grid-template-columns: 112px minmax(0, 1fr); gap: 14px; padding: 14px 0; }
+.fact-row dt { font-size: 12.5px; }
+.fact-row dd { font-size: 13.5px; line-height: 1.55; }
+.featured-project {
+  gap: 34px;
+  padding: 32px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.featured-project h3 { font-size: 26px; }
+.project-desc { font-size: 14.5px; line-height: 1.72; }
+.feature-list { gap: 9px; }
+.feature-list li { font-size: 13.5px; line-height: 1.6; }
+.tag-kicker { font-size: 10.5px; letter-spacing: .06em; border-radius: 5px; }
+.tech-stack { gap: 7px; }
+.tech-stack span { font-size: 10.5px; padding: 4px 9px; border-radius: 6px; }
+.metrics-card { border-radius: 16px; padding: 24px; }
+.formula-pill { font-size: 13px; padding: 11px 12px; border-radius: 9px; }
+.metrics-title { font-size: 13px; }
+.metric-row { grid-template-columns: 112px minmax(0, 1fr); gap: 12px; }
+.metric-meta span { font-size: 12px; }
+.metric-meta strong { font-size: 11.5px; }
+.bar-track { height: 27px; border-radius: 7px; }
+.bar-range { top: 4px; bottom: 4px; }
+.bar-axis { grid-template-columns: 112px minmax(0, 1fr); gap: 12px; }
+.axis-ticks { font-size: 10.5px; }
+.metrics-note { font-size: 12.5px; line-height: 1.6; }
+.projects-grid, .exp-grid { gap: 20px; }
+.project-card, .exp-card {
+  padding: 27px;
+  border-radius: 17px;
+  box-shadow: var(--shadow-card);
+}
+.project-card h3, .exp-card h3 { font-size: 20px; }
+.project-card p, .exp-card p { font-size: 13.8px; line-height: 1.72; }
+.card-link { font-size: 13.5px; }
+.exp-date { font-size: 10.5px; }
+.goal-item {
+  grid-template-columns: 126px minmax(0, 1fr);
+  padding: 14px 17px;
+  border-radius: 11px;
+}
+.goal-item strong { font-size: 14px; }
+.goal-item span { font-size: 13px; line-height: 1.55; }
+.learn-intro p { font-size: 14.5px; line-height: 1.75; }
+.cta-section { padding-block: 62px; }
+.cta-copy h2 { font-size: clamp(27px, 3vw, 34px); }
+.cta-copy p { font-size: 14.5px; }
+.footer { padding-block: 24px; }
+.footer .container { font-size: 12px; }
+a, button { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--accent-bright); outline-offset: 3px; }
+::selection { background: var(--accent-soft); color: var(--ink); }
+
+@media (max-width: 960px) {
+  .container { padding-inline: 26px; }
+  .hero-grid { gap: 34px; }
+  .about-grid, .learn-grid { gap: 32px; }
+  .featured-project { gap: 24px; }
+}
+@media (max-width: 720px) {
+  .container { padding-inline: 22px; }
+  .navbar { height: 64px; }
+  .nav-menu { gap: 0; }
+  .nav-menu a { display: none; }
+  .hero { padding-block: 52px 58px; }
+  .hero-grid { gap: 30px; }
+  .hero h1 { font-size: clamp(37px, 9vw, 48px); }
+  .section { padding-block: 54px; }
+  .featured-project, .project-card, .exp-card { padding: 23px; }
+  .projects-grid, .exp-grid { grid-template-columns: 1fr; }
+  .cta-box { align-items: flex-start; }
+  .cta-buttons { width: 100%; }
+}
+@media (max-width: 580px) {
+  .container { padding-inline: 18px; }
+  .venn-card { padding: 19px; }
+  .venn-header { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .venn-header span { text-align: left; }
+  .venn-stage { grid-template-columns: 1fr; gap: 8px; }
+  .venn-col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 12px;
+  }
+  .venn-label { width: 100%; min-height: 0; margin-bottom: 2px; }
+  .chip { width: auto; }
+  .fact-row, .goal-item, .metric-row, .bar-axis {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .bar-axis > span { display: none; }
+  .featured-project { grid-template-columns: 1fr; }
+  .metrics-card { padding: 19px; }
+  .cta-buttons .btn { flex: 1 1 100%; }
+  .footer .container { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+</style>
+
 </head>
 <body>
 
@@ -982,7 +1210,7 @@ a {
 
       <div class="venn-card">
         <div class="venn-header">
-          <h2>Мой стек и ваш</h2>
+          <h2>Технологии и развитие</h2>
           <span>Пересечение опыта и задач</span>
         </div>
         <div class="venn-stage" id="venn" role="img" aria-label="Диаграмма: мои технологии, совпадения со стеком вакансии и то, что хочу освоить">
